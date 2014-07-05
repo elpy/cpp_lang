@@ -8,7 +8,7 @@ class X
 public:
 	X();
 	X(int a) { this->a = a; *p = 0; }
-	X(const X &x);
+	X(X &x);
 	~X();
 	void set(int a) { this->a = a; *p = a; }
 	void set(int a, int b) { this->a = a; *p = b; }
@@ -64,7 +64,7 @@ X::~X()
 	cout << "destructor" << '\n';
 }
 
-X::X(const X &x)
+X::X( X &x)
 {
 	a = x.a;
 	p = new int;
